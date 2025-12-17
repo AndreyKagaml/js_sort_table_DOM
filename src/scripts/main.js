@@ -35,7 +35,9 @@ if (table) {
 function parseCellToNumber(row, index) {
   const digits = row.children[index].textContent.match(/\d+/g);
 
-  if (digits.length > 0) {
+  if (digits && digits.length > 0) {
     return parseInt(digits.join(''));
   }
+
+  return 0;
 }
